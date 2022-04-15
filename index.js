@@ -22,5 +22,5 @@ xhttp.onreadystatechange = function () {
         })
     }
 };
-xhttp.open("GET", "https://newsapi.org/v2/everything?q=tesla&from=2022-03-04&sortBy=publishedAt&apiKey=6f01ba015f76461b93d165d92ec71ab5", true);
+xhttp.open("GET", "https://newsapi.org/v2/everything?q=Apple&from=2022-04-15&sortBy=popularity&apiKey=6f01ba015f76461b93d165d92ec71ab5", true);
 xhttp.send();
