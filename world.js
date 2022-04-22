@@ -3,10 +3,23 @@ xhttp.onreadystatechange = function () {
     if (this.readyState == 4 && this.status == 200) {
         // Typical action to be performed when the document is ready:
         var res = JSON.parse(xhttp.responseText);
-        console.log(res)
+        // console.log(res)
+
         var newsData = res.sources.map(function (article) {
             return article
-        });
+        })
+
+        var container = document.querySelector('#article-divs')
+        newsData.forEach(function (article) {
+            // console.log(article)
+            var articleDiv = document.createElement('div')
+            articleDiv.classList.add('articleDiv')
+            articleDiv.innerHTML = `
+                <h2>${article.name}</h2>
+                <h6><a href="${article.url}">${article.url}</a></h6>
+                `
+            container.appendChild(articleDiv)
+        })
 
     }
 };
